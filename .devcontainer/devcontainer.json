@@ -1,0 +1,12 @@
+"extensions": [
+  "GitHub.copilot",
+  "GitHub.copilot-chat",
+  "saoudrizwan.claude-dev",
+  "Dart-Code.flutter",
+  "Dart-Code.dart-code",
+  "golang.Go",
+  "ms-azuretools.vscode-docker",
+  "HashiCorp.terraform",
+  "ms-kubernetes-tools.vscode-kubernetes-tools",
+  "eamodio.gitlens"
+]
