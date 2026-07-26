@@ -1,3 +1,5 @@
+import 'app/bootstrap.dart';
+
 void main() {
-  // Main entry point - will be configured in bootstrap.dart
+  bootstrap();
 }
