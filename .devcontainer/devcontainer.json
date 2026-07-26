@@ -1,12 +1,40 @@
-"extensions": [
-  "GitHub.copilot",
-  "GitHub.copilot-chat",
-  "saoudrizwan.claude-dev",
-  "Dart-Code.flutter",
-  "Dart-Code.dart-code",
-  "golang.Go",
-  "ms-azuretools.vscode-docker",
-  "HashiCorp.terraform",
-  "ms-kubernetes-tools.vscode-kubernetes-tools",
-  "eamodio.gitlens"
-]
+{
+	"name": "Ironit Flutter Development",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": "."
+	},
+	"remoteUser": "vscode",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"Dart-Code.flutter",
+				"Dart-Code.dart-code",
+				"rebornix.Ruby",
+				"GitHub.vscode-pull-request-github"
+			],
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "bash",
+				"dart.flutterSdkPath": "/opt/flutter",
+				"dart.sdkPath": "/opt/flutter/bin/cache/dart-sdk"
+			}
+		}
+	},
+	"containerEnv": {
+		"JAVA_HOME": "/usr/lib/jvm/java-21-openjdk-amd64",
+		"ANDROID_HOME": "/opt/android-sdk",
+		"FLUTTER_HOME": "/opt/flutter"
+	},
+	"remoteEnv": {
+		"PATH": "${containerEnv:PATH}:/usr/lib/jvm/java-21-openjdk-amd64/bin:/opt/android-sdk/cmdline-tools/latest/bin:/opt/android-sdk/platform-tools:/opt/flutter/bin"
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"installZsh": true,
+			"configureZshAsDefaultShell": false,
+			"makeSymbols": true
+		}
+	},
+	"postCreateCommand": "flutter doctor",
+	"waitFor": "postCreateCommand"
+}
