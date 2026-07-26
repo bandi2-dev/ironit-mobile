@@ -25,7 +25,24 @@ class _App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
+      themeMode: ThemeMode.light,
       routerConfig: AppRouter.router,
+    );
+  }
+}
+
+// Public version of the app for testing purposes
+class TestableApp extends StatelessWidget {
+  const TestableApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Text('Test App'),
+        ),
+      ),
     );
   }
 }
